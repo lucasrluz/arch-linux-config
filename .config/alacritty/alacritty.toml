@@ -1,0 +1,22 @@
+[terminal]
+shell = "/bin/fish"
+
+[font]
+size = 15
+
+[font.bold]
+family = "IBM Plex Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "IBM Plex Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "IBM Plex Mono"
+style = "Italic"
+
+[font.normal]
+family = "IBM Plex Mono"
+style = "Normal"
+
