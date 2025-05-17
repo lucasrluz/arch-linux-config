@@ -17,12 +17,12 @@
     urgent-background:           var(background);
     selected-normal-foreground:  var(background);
     active-foreground:           var(blue);
-    background:                  rgba ( 10, 10, 10, 100 % );
+    background:                  rgba ( 16, 16, 16, 100 % );
     selected-active-background:  var(blue);
     active-background:           var(background);
     selected-normal-background:  var(foreground);
     alternate-normal-background: var(background);
-    foreground:                  rgba ( 216, 216, 216, 100 % );
+    foreground:                  rgba ( 255, 255, 255, 100 % );
     selected-urgent-foreground:  var(background);
     normal-foreground:           var(foreground);
     alternate-urgent-foreground: var(red);
