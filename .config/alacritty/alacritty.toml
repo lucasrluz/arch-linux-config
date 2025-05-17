@@ -1,6 +1,11 @@
 [terminal]
 shell = "/bin/fish"
 
+[general]
+import = [
+    "~/.config/alacritty/themes/vesper.toml"
+]
+
 [font]
 size = 15
 
