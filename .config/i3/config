@@ -1,0 +1,125 @@
+# Set the mod key
+set $mod Mod4
+
+# Gaps 
+gaps inner 6px
+
+font pango:monospace 8
+
+# Window border
+for_window [class=".*"] border pixel 1
+
+# Window border color 
+client.focused          #B0B0B0 #B0B0B0 #B0B0B0 #B0B0B0 #B0B0B0
+client.focused_inactive #000000 #000000 #000000 #000000 #000000
+client.unfocused        #000000 #000000 #000000 #000000 #000000
+client.urgent           #2f343a #900000 #ffffff #900000 #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000 #0c0c0c
+
+# Script
+exec --no-startup-id ~/.config/start/start.sh &
+
+# 404
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id dex --autostart --environment i3
+
+# Network Manager Applet 
+exec --no-startup-id nm-applet
+
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Set a key to move a window
+floating_modifier $mod
+
+# Terminal 
+bindsym $mod+Return exec alacritty
+
+# Rofi
+bindsym $mod+d exec --no-startup-id rofi -show
+# bindsym $mod+d exec --no-startup-id dmenu_run -fn 'JetBrains Mono-10'
+
+# Close window
+bindsym $mod+q kill
+
+# Window focus
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Location of the focused window
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Fullscreen
+bindsym $mod+F11 fullscreen toggle
+
+# Container layout 
+bindsym $mod+semicolon split toggle
+
+# Set a container layout (stacked, tabbed, toggle split)
+bindsym $mod+Shift+question layout toggle all
+
+# Floating window
+bindsym $mod+Shift+space floating toggle
+
+# Window focus for float and fixed window
+bindsym $mod+space focus mode_toggle
+
+# Restar i3
+bindsym $mod+Shift+r restart
+
+# Exit i3
+bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Window size
+bindsym $mod+Control Right resize grow width 5 px or 5ppt
+bindsym $mod+Control Left resize shrink width 5 px or 5 ppt
+bindsym $mod+Control Up resize grow height 5 px or 5 ppt
+bindsym $mod+Control Down resize shrink height 5 px or 5 ppt
+
+# Pulse Audio control
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Workspace names
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# Workspace shortcut
+bindsym $mod+1 workspace  $ws1
+bindsym $mod+2 workspace  $ws2
+bindsym $mod+3 workspace  $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
+
+# Move window to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
