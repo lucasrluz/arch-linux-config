@@ -24,4 +24,8 @@ sudo cp ./etc/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 git config --global user.email "lucasrluz.23@gmail.com"
 git config --global user.name "Lucas Ribeiro da Luz"
 
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+
+yay -S flat-remix-gtk flat-remix
+
 echo "Adicionar i3 ao .xinitrc"
