@@ -1,3 +1,7 @@
 [time]
 command=date '+%d/%m/%Y %H:%M:%S'
 interval=1
+
+[battery]
+command=acpi -b | cut -d',' -f2 | tr -d ' %'
+interval=10
