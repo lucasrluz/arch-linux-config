@@ -24,7 +24,3 @@ Deve mostrar algo como:
 +++ TLP Status
 State = enabled
 ```
-
-## Yay
-
-`sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si`
