@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman -S git neovim xorg xorg-xinit i3-wm i3blocks dmenu j4-dmenu-desktop alacritty fish feh chromium thunar ttf-ibm-plex gcc acpi tlp
+sudo pacman -S --needed git neovim xorg xorg-xinit i3-wm i3blocks dmenu j4-dmenu-desktop alacritty fish feh chromium thunar thunar-volman gvfs thunar-archive-plugin file-roller ttf-ibm-plex ttf-ibmplex-mono-nerd gcc acpi tlp bluez bluez-utils pulseaudio pulseaudio-alsa pulseaudio-bluetooth blueman pavucontrol lxappearance network-manager-applet
 
 git clone https://github.com/lucasrluz/dotfiles.git
 git clone https://github.com/lucasrluz/wallpaper.git
@@ -16,10 +16,20 @@ sudo systemctl enable tlp.service
 sudo systemctl start tlp.service
 sudo systemctl mask systemd-rfkill.service systemd-rfkill.socket
 
-cp dotfiles/etc/tlp.conf /etc/tlp.conf
+sudo cp dotfiles/etc/tlp.conf /etc/tlp.conf
 
 sudo tlp start
 
-cp dotfiles/etc/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+sudo cp dotfiles/etc/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
+
+git config --global user.email "lucasrluz.23@gmail.com"
+git config --global user.name "Lucas Ribeiro da Luz"
+
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+
+# yay -S flat-remix-gtk flat-remix
+
+sudo systemctl enable bluetooth.service
+sudo systemctl start bluetooth.service
 
 echo "Adicionar i3 ao .xinitrc"
