@@ -15,6 +15,8 @@ mkdir ~/.config
 
 mv dotfiles/.config/sway ~/.config/
 mv dotfiles/.config/alacritty ~/.config/
+mv dotfiles/.config/fish ~/.config/
+mv dotfiles/.config/nvim ~/.config/
 
 # Configuração do git
 git config --global user.email "lucasrluz.23@gmail.com"
