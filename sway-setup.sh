@@ -4,7 +4,7 @@
 sudo pacman -S --needed git neovim alacritty fish ttf-ibm-plex ttf-ibmplex-mono-nerd gcc network-manager-applet
 
 # Instalação de pacotes relacionados ao ambiente gráfico
-sudo pacman -S --needed sway rofi swaybg
+sudo pacman -S --needed sway rofi swaybg xorg-xwayland
 
 # Clone do repositório de dotfiles e wallpapers
 git clone https://github.com/lucasrluz/dotfiles.git
