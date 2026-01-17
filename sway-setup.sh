@@ -1,17 +1,27 @@
 #!/bin/bash
 
-sudo pacman -S --needed git neovim alacritty fish chromium thunar thunar-volman gvfs thunar-archive-plugin file-roller ttf-ibm-plex ttf-ibmplex-mono-nerd gcc lxappearance network-manager-applet
+# Instalação de pacotes básicos de aplicações, fontes e serviços
+sudo pacman -S --needed git neovim alacritty fish ttf-ibm-plex ttf-ibmplex-mono-nerd gcc network-manager-applet
 
+# Instalação de pacotes relacionados ao ambiente gráfico
 sudo pacman -S --needed sway wmenu swaybg
 
+# Clone do repositório de dotfiles e wallpapers
 git clone https://github.com/lucasrluz/dotfiles.git
 git clone https://github.com/lucasrluz/wallpaper.git
 
-mv dotfiles/.config/ ~/
+# Movendo os arquivos de configuração
+mkdir ~/.config
 
+mv dotfiles/.config/sway ~/.config/
+mv dotfiles/.config/alacritty ~/.config/
+
+# Configuração do git
 git config --global user.email "lucasrluz.23@gmail.com"
 git config --global user.name "Lucas Ribeiro da Luz"
 
+# Instalação do yay
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
-# yay -S flat-remix-gtk flat-remix
+# Instalação de pacotes via yay
+yay -S google-chrome
