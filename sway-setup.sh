@@ -2,7 +2,7 @@
 
 sudo pacman -S --needed git neovim alacritty fish chromium thunar thunar-volman gvfs thunar-archive-plugin file-roller ttf-ibm-plex ttf-ibmplex-mono-nerd gcc lxappearance network-manager-applet
 
-sudo pacman -S --needed sway wmenu
+sudo pacman -S --needed sway wmenu swaybg
 
 git clone https://github.com/lucasrluz/dotfiles.git
 git clone https://github.com/lucasrluz/wallpaper.git
